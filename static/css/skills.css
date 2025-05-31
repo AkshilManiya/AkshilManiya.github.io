@@ -1,3 +1,16 @@
+:root {
+    /* Modern color palette */
+    --space-black: #0f0f15;
+    --deep-space: #1a1a2e;
+    --cosmic-purple: #6a3093;
+    --neon-blue: #00d1ff;
+    --electric-pink: #ff2d75;
+    --cyber-green: #00ff9d;
+    --star-white: #f0f0f0;
+    --nebula-gray: #2a2a3c;
+    --description-text: #b0b0c0;
+}
+
 /* Skills Section - Futuristic Style */
 .skills-section {
     position: relative;
@@ -66,6 +79,10 @@
     gap: 1rem;
 }
 
+
+
+
+
 .skill-icon {
     width: 40px;
     height: 40px;
@@ -76,6 +93,7 @@
     border-radius: 8px;
     padding: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
 }
 
 .skill-icon img {
@@ -84,6 +102,34 @@
     object-fit: contain;
     filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.2));
 }
+
+.skill-icon-tooltip {
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: radial-gradient(circle, rgba(250, 250, 250, 0.1) 27%, rgba(92, 225, 255, 0.61) 100%);
+    color: var(--star-white);
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    white-space: nowrap;
+    opacity: 0;
+    transition: all 0.2s ease;
+    pointer-events: none;
+    z-index: 10;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.skill-icon:hover .skill-icon-tooltip {
+    opacity: 1;
+    bottom: 45px;
+}
+
+
+
+
 
 .skill-progress {
     flex-grow: 1;

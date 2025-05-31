@@ -1,46 +1,265 @@
 {
     "projects": [
         {
-            "project_id": "11",
-            "title": "Project Alpha",
-            "subtitle": "A Beginner's Journey",
+            "project_id": "10",
+            "title": "Portfolio",
             "description": "",
             "dependencies": [
                 "HTML",
                 "CSS",
-                "JavaScript"
+                "JavaScript",
+                "jQuery"
             ],
-            "progress": 40,
+            "progress": 90,
             "live": true,
-            "url": "",
-            "github_code": "",
+            "url": "https://akshilmaniya.github.io/",
+            "github_code": "https://github.com/AkshilManiya/AkshilManiya.github.io",
             "linkedin": "",
             "case-study": "",
             "images": [
-                "project/MPD/p11.png",
-                "project/MPD/p12.png",
-                "project/MPD/p13.png",
-                "project/MPD/p14.png",
-                "project/MPD/p15.png",
-                "project/MPD/p16.png",
-                "project/MPD/p17.png"
+                "project/Portfolio/Portfolio1.png",
+                "project/Portfolio/Portfolio2.png",
+                "project/Portfolio/Portfolio3.png",
+                "project/Portfolio/Portfolio4.png",
+                "project/Portfolio/Portfolio5.png"
             ]
         },
         {
-            "project_id": "12",
-            "title": "Project Beta",
-            "subtitle": "Advanced Techniques",
-            "description": "This project explores advanced techniques in web development.",
+            "project_id": "9",
+            "title": "MoviePerDay",
+            "description": "",
             "dependencies": [
-                "html"
+                "HTML",
+                "CSS",
+                "JavaScript",
+                "Django",
+                "MySql"
             ],
-            "progress": 50,
+            "progress": 30,
             "live": false,
             "url": "",
             "github_code": "",
             "linkedin": "",
             "case-study": "",
-            "images": []
+            "images": [
+                "project/MoviePerDay/MoviePerDay1.png",
+                "project/MoviePerDay/MoviePerDay2.png",
+                "project/MoviePerDay/MoviePerDay3.png",
+                "project/MoviePerDay/MoviePerDay4.png",
+                "project/MoviePerDay/MoviePerDay5.png",
+                "project/MoviePerDay/MoviePerDay6.png",
+                "project/MoviePerDay/MoviePerDay7.png"
+            ]
+        },
+        {
+            "project_id": "8",
+            "title": "Bingo",
+            "description": "",
+            "dependencies": [
+                "HTML",
+                "CSS",
+                "jQuery",
+                "SocketIo",
+                "Flask"
+            ],
+            "progress": 60,
+            "live": false,
+            "url": "",
+            "github_code": "",
+            "linkedin": "https://www.linkedin.com/posts/akshil-maniya-61a6b924a_python-flask-javascript-activity-7201204068151635970-gl_d?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD2vIzYB8i1SgMBcxEZR-ANcG4OETodl7_Q",
+            "case-study": "",
+            "images": [
+                "project/Bingo/Bingo1.png",
+                "project/Bingo/Bingo2.png",
+                "project/Bingo/Bingo3.png",
+                "project/Bingo/Bingo4.png",
+                "project/Bingo/Bingo5.png",
+                "project/Bingo/Bingo6.png"
+            ]
+        },
+        {
+            "project_id": "7",
+            "title": "GameZone",
+            "description": "",
+            "dependencies": [
+                "HTML",
+                "CSS",
+                "JavaScript",
+                "php",
+                "MySql"
+            ],
+            "progress": 90,
+            "live": false,
+            "url": "",
+            "github_code": "",
+            "linkedin": "https://www.linkedin.com/posts/akshil-maniya-61a6b924a_gamezone-webdevelopment-teamwork-activity-7127696982105571329-Lznw?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD2vIzYB8i1SgMBcxEZR-ANcG4OETodl7_Q",
+            "case-study": "",
+            "images": [
+                "project/GameZone/GameZone1.png",
+                "project/GameZone/GameZone2.png",
+                "project/GameZone/GameZone3.png",
+                "project/GameZone/GameZone4.png",
+                "project/GameZone/GameZone5.png",
+                "project/GameZone/GameZone6.png",
+                "project/GameZone/GameZone7.png"
+            ]
+        },
+        {
+            "project_id": "6",
+            "title": "SweetShop",
+            "description": "",
+            "dependencies": [
+                "HTML",
+                "CSS",
+                "JavaScript",
+                "php",
+                "MySql"
+            ],
+            "progress": 90,
+            "live": false,
+            "url": "",
+            "github_code": "",
+            "linkedin": "",
+            "case-study": "",
+            "images": [
+                "project/SweetShop/SweetShop1.png",
+                "project/SweetShop/SweetShop2.png",
+                "project/SweetShop/SweetShop3.png",
+                "project/SweetShop/SweetShop4.png",
+                "project/SweetShop/SweetShop5.png",
+                "project/SweetShop/SweetShop6.png",
+                "project/SweetShop/SweetShop7.png",
+                "project/SweetShop/SweetShop8.png",
+                "project/SweetShop/SweetShop9.png",
+                "project/SweetShop/SweetShop10.png",
+                "project/SweetShop/SweetShop11.png",
+                "project/SweetShop/SweetShop12.png"
+            ]
+        },
+        {
+            "project_id": "5",
+            "title": "ExpensesSplitter",
+            "description": "",
+            "dependencies": [
+                "HTML",
+                "CSS",
+                "JavaScript",
+                "Flask",
+                "MySql"
+            ],
+            "progress": 60,
+            "live": false,
+            "url": "",
+            "github_code": "",
+            "linkedin": "",
+            "case-study": "",
+            "images": [
+                "project/ExpensesSplitter/ExpensesSplitter1.png",
+                "project/ExpensesSplitter/ExpensesSplitter2.png",
+                "project/ExpensesSplitter/ExpensesSplitter3.png",
+                "project/ExpensesSplitter/ExpensesSplitter4.png",
+                "project/ExpensesSplitter/ExpensesSplitter5.png",
+                "project/ExpensesSplitter/ExpensesSplitter6.png",
+                "project/ExpensesSplitter/ExpensesSplitter7.png",
+                "project/ExpensesSplitter/ExpensesSplitter8.png"
+            ]
+        },
+        {
+            "project_id": "4",
+            "title": "MoviePerDayV1",
+            "description": "",
+            "dependencies": [
+                "HTML",
+                "CSS",
+                "JavaScript",
+                "Django",
+                "MySql"
+            ],
+            "progress": 80,
+            "live": true,
+            "url": "https://movieperdays.pythonanywhere.com/",
+            "github_code": "",
+            "linkedin": "https://www.linkedin.com/posts/akshil-maniya-61a6b924a_python-django-movierecommendation-activity-7286335005423755264-ab4X?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD2vIzYB8i1SgMBcxEZR-ANcG4OETodl7_Q",
+            "case-study": "",
+            "images": [
+                "project/MoviePerDayV1/MoviePerDayV11.png",
+                "project/MoviePerDayV1/MoviePerDayV12.png",
+                "project/MoviePerDayV1/MoviePerDayV13.png",
+                "project/MoviePerDayV1/MoviePerDayV14.png"
+            ]
+        },
+        {
+            "project_id": "3",
+            "title": "DataScraper",
+            "description": "",
+            "dependencies": [
+                "HTML",
+                "CSS",
+                "JavaScript",
+                "Flask",
+                "BeautifulSoup",
+                "MySql"
+            ],
+            "progress": 100,
+            "live": false,
+            "url": "",
+            "github_code": "",
+            "linkedin": "",
+            "case-study": "",
+            "images": [
+                "project/DataScraper/DataScraper1.png",
+                "project/DataScraper/DataScraper2.png",
+                "project/DataScraper/DataScraper3.png",
+                "project/DataScraper/DataScraper4.png",
+                "project/DataScraper/DataScraper5.png",
+                "project/DataScraper/DataScraper6.png"
+            ]
+        },
+        {
+            "project_id": "2",
+            "title": "TheSocialSkull",
+            "description": "",
+            "dependencies": [
+                "HTML",
+                "CSS",
+                "jQuery"
+            ],
+            "progress": 100,
+            "live": true,
+            "url": "https://thesocialskull.com/",
+            "github_code": "",
+            "linkedin": "",
+            "case-study": "",
+            "images": [
+                "project/TheSocialSkull/TheSocialSkull1.png",
+                "project/TheSocialSkull/TheSocialSkull2.png",
+                "project/TheSocialSkull/TheSocialSkull3.png",
+                "project/TheSocialSkull/TheSocialSkull4.png",
+                "project/TheSocialSkull/TheSocialSkull5.png",
+                "project/TheSocialSkull/TheSocialSkull6.png",
+                "project/TheSocialSkull/TheSocialSkull7.png"
+            ]
+        },
+        {
+            "project_id": "1",
+            "title": "MovieRecommender",
+            "description": "",
+            "dependencies": [
+                "HTML",
+                "CSS",
+                "JavaScript",
+                "Flask",
+                "MySql"
+            ],
+            "progress": 95,
+            "live": false,
+            "url": "",
+            "github_code": "",
+            "linkedin": "",
+            "case-study": "",
+            "images": [
+                "project/MovieRecommender/MovieRecommender1.png"
+            ]
         }
     ]
 }

@@ -54,6 +54,7 @@
 .project-info h2 {
     font-size: 1.3rem;
     color: var(--white);
+    /* margin-bottom: 1rem; */
 }
 
 .project-info>div:not(.technology-used, .explore-projects-more) {
@@ -82,8 +83,8 @@
 }
 
 .technology-used img {
-    width: 28px;
-    height: 28px;
+    width: 33px;
+    height: 33px;
     border-radius: 50%;
     object-fit: contain;
     background: var(--white);
