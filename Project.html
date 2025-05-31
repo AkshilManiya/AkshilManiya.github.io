@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Project</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            color: var(--light-gray);
+            overflow-x: hidden;
+            background-color: black;
+        }
+
+        :root {
+            /* Base colors */
+            --black: #0a0a0a;
+            --dark-gray: #1a1a1a;
+            --medium-gray: #2a2a2a;
+            --light-gray: #e5e5e5;
+            --white: #ffffff;
+
+            /* Blue accent colors */
+            --electric-blue: #3B82F6;
+            --highlight-blue: #60a5fa;
+            --deep-blue: #1e40af;
+            --cyan: #22d3ee;
+
+            /* Glass morphism colors */
+            --glass-light: rgba(255, 255, 255, 0.05);
+            --glass-dark: rgba(0, 0, 0, 0.3);
+            --glass-border: rgba(255, 255, 255, 0.1);
+
+            /* Utility colors */
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+
+            /* Other variables */
+            --transition-speed: 0.3s;
+            --section-padding: 4rem;
+            --blur-amount: 8px;
+            --border-radius: 12px;
+        }
+
+        .section-header {
+            position: relative;
+            text-align: center;
+            margin-bottom: 3rem;
+            z-index: 2;
+        }
+
+        .heading {
+            font-size: 3rem;
+            color: var(--white);
+            text-align: center;
+            position: relative;
+        }
+
+        .heading span {
+            color: var(--electric-blue);
+            position: relative;
+        }
+
+        .heading span::after {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--cyan);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.5s ease;
+        }
+
+        .heading:hover span::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        .section-subtitle {
+            color: var(--light-gray);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+    <style>
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--neon-blue), var(--cyber-green));
+            border-radius: 6px;
+            width: 0;
+            transition: width 1.2s cubic-bezier(0.65, 0, 0.35, 1);
+            position: relative;
+            overflow: hidden;
+        }
+    </style>
+
+    <link rel="stylesheet" href="static/css/body_background.css">
+    <link rel="stylesheet" href="static/css/mouse_trailing.css">
+    <link rel="stylesheet" href="static/css/error_fetching_file.css">
+    <link rel="stylesheet" href="static/css/navbar.css">
+    <link rel="stylesheet" href="static/css/project_desc_images.css">
+    <link rel="stylesheet" href="static/css/project_desc_details.css">
+
+</head>
+
+<body>
+
+    <!-- <div class="fixed-bg">
+        <video autoplay muted loop>
+            <source src="static/background/v1.mp4" type="video/mp4">
+        </video>
+    </div> -->
+    <!-- <script src="static/js/mouse_trailing.js"></script> -->
+
+    <div class="scrollable-content" id="content">
+
+        <!-- Navbar -->
+        <div class="navbar-section">
+            <nav>
+                <ul>
+                    <li>
+                        <a href="#home" aria-label="Home">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M3 10L12 3L21 10V20C21 20.5523 20.5523 21 20 21H16C15.4477 21 15 20.5523 15 20V16C15 15.4477 14.5523 15 14 15H10C9.44772 15 9 15.4477 9 16V20C9 20.5523 8.55228 21 8 21H4C3.44772 21 3 20.5523 3 20V10Z"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#about" aria-label="About">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="2" />
+                                <path d="M4 20C4 16 8 14 12 14C16 14 20 16 20 20" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" />
+                            </svg>
+                            <span>About</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#skills" aria-label="Skills">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8 8L4 12L8 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M16 8L20 12L16 16" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M14 4L10 20" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                            <span>Skills</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#projects" aria-label="Projects">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M3 6H9L11 8H21C21.5523 8 22 8.44772 22 9V19C22 19.5523 21.5523 20 21 20H3C2.44772 20 2 19.5523 2 19V7C2 6.44772 2.44772 6 3 6Z"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <circle cx="8" cy="14" r="1.5" fill="currentColor" />
+                                <circle cx="12" cy="14" r="1.5" fill="currentColor" />
+                                <circle cx="16" cy="14" r="1.5" fill="currentColor" />
+                            </svg>
+                            <span>Projects</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#contact" aria-label="Contact">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M4 4H20C21.1046 4 22 4.89543 22 6V18C22 19.1046 21.1046 20 20 20H4C2.89543 20 2 19.1046 2 18V6C2 4.89543 2.89543 4 4 4Z"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M22 6L12 13L2 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                            <span>Contact</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <button class="resume-download">
+                <a href="E:\akshil\programing\web_front\Portfolio\r1.pdf" download="Akshil_Resume.pdf" target="_blank"
+                    style="color: inherit; text-decoration: none;">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 3V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        <path d="M6 11L12 17L18 11" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path d="M5 21H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                    <span> Resume </span>
+                </a>
+            </button>
+        </div>
+
+        <!-- Project Image Section -->
+        <div class="carousel-frame">
+            <div class="project-carousel">
+                <!-- Pre-create 3 image elements -->
+                <img class="carousel-item left" src="static/images/logo1.png" alt="Project image">
+                <img class="carousel-item center" src="static/images/logo1.png" alt="Project image">
+                <img class="carousel-item right" src="static/images/logo1.png" alt="Project image">
+            </div>
+        </div>
+
+        <!-- Project Details Section -->
+        <section class="project-container">
+            <!-- Project Header -->
+            <div class="project-header">
+                <h1 class="project-title" id="title">Quantum Dashboard</h1>
+                <div class="tech-stack">
+                    <span class="tech-stack-label">Tech Stack:</span>
+                    <div class="tech-icons-container" id="dependencies">
+                        <div class="tech-icon-wrapper">
+                            <img src="static/images/techs/null.png" alt="" class="tech-icon">
+                            <div class="tooltip">Null</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Description -->
+            <div class="project-description" id="description">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus ex velit excepturi sint qui
+                    maxime ratione autem, ut quas illo molestiae electi pellentesque quas querat make molestiae
+                    voluptatem quis similique natus! Ducimus possismus corporis sequi sunt repellat hic, habuit enim
+                    quam vel quibus laborum omnis quod a desertu aliquam natus cupiditate! Illo animiam aperiam hic
+                    justo id, modi facilis sequi dulenti rem consequatur quam ellum qui quisque nam nulla quasi eum us
+                    ea him laudantium.</p>
+            </div>
+
+            <!-- Project Status -->
+            <div class="project-status">
+                <div class="status-header">
+                    <h2 class="status-title">Project Status</h2>
+                    <div class="deployment-status deployment-available" id="site-live">
+                        <i class="fas fa-rocket"></i>
+                        <span>Live</span>
+                    </div>
+                    <div class="deployment-status deployment-pending" id="site-not-live">
+                        <i class="fas fa-rocket"></i>
+                        <span>Pending</span>
+                    </div>
+                </div>
+
+                <div class="progress-container">
+                    <div class="progress-info">
+                        <span class="progress-label">Development Progress</span>
+                        <span class="progress-percent" id="per">50%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="perc_bar"></div>
+                    </div>
+                </div>
+
+                <a href="" target="_blank" class="live-site-btn" id="live">
+                    <i class="fas fa-external-link-alt"></i>
+                    Visit Live Dashboard
+                </a>
+            </div>
+
+            <!-- Social Links -->
+            <div class="social-links-container">
+                <h3 class="social-links-title">Explore More</h3>
+                <div class="social-links">
+                    <a href="" target="_blank" class="social-link-item" id="github">
+                        <div class="social-link github-link">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <span class="social-link-label">View Code</span>
+                    </a>
+                    <a href="" target="_blank" class="social-link-item" id="linkedin">
+                        <div class="social-link linkedin-link">
+                            <i class="fab fa-linkedin-in"></i>
+                        </div>
+                        <span class="social-link-label">Share Project</span>
+                    </a>
+                    <a href="" class="social-link-item" target="_blank" id="case-study">
+                        <div class="social-link"
+                            style="background: linear-gradient(135deg, rgba(106, 48, 147, 0.7), rgba(106, 48, 147, 0.9));">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <span class="social-link-label">Case Study</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const projectId = urlParams.get('project');
+        const defaultImages = [
+            'static/images/logo1.png',
+            'static/images/logo1.png',
+            'static/images/logo1.png'
+        ];
+        const $carouselItems = $('.carousel-item');
+        const $leftImg = $carouselItems.eq(0);
+        const $centerImg = $carouselItems.eq(1);
+        const $rightImg = $carouselItems.eq(2);
+
+
+        $(document).ready(function () {
+            const socialLinks = document.querySelectorAll('.social-link');
+            socialLinks.forEach(link => {
+                link.addEventListener('mouseenter', () => {
+                    link.style.transform = 'translateY(-8px) scale(1.05)';
+                });
+                link.addEventListener('mouseleave', () => {
+                    link.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+
+            if (projectId) {
+                $.getJSON('/project/project_info.json')
+                    .done(data => {
+                        const project = data.projects.find(p => p.project_id === projectId);
+                        if (project) {
+
+                            // Set project title
+                            $('#title').text(project.title);
+
+                            // Set project description
+                            if (!project.description || project.description.trim() === '') {
+                                project.description = "No description available for this project.";
+                            }
+                            else {
+                                const descriptionParts = project.description.split('||');
+                                $('#description').empty();
+                                descriptionParts.forEach(part => {
+                                    const $p = $('<p>').text(part.trim());
+                                    $('#description').append($p);
+                                });
+                            }
+
+                            // Set project progress
+                            $('#per').text(project.progress + '%');
+                            $('#perc_bar').css('width', project.progress + '%');
+
+                            // Set live link
+                            const $liveLink = $('#live');
+                            if (project.live) {
+                                $('#site-not-live').hide();
+                                $('#site-live').show()
+                            } else {
+                                $('#site-live').hide();
+                                $('#site-not-live').show();
+                            }
+
+                            // Set deployment status
+                            if (project.url) {
+                                $liveLink.off('click').on('click', function (e) {
+                                    e.preventDefault();
+                                    window.open(project.url, '_blank');
+                                });
+                            } else {
+                                $liveLink.hide();
+                            }
+
+                            // Set GitHub link
+                            const $githubLink = $('#github');
+                            if (project.github_code) {
+                                $githubLink.attr('href', project.github_code);
+                            } else {
+                                $githubLink.attr('href', '#').off('click').on('click', function (e) {
+                                    e.preventDefault();
+                                    alert("GitHub link is not available for this project.");
+                                });
+                            }
+
+                            // Set LinkedIn link
+                            const $linkedinLink = $('#linkedin');
+                            if (project.linkedin) {
+                                $linkedinLink.attr('href', project.linkedin);
+                            } else {
+                                $linkedinLink.attr('href', '#').off('click').on('click', function (e) {
+                                    e.preventDefault();
+                                    alert("LinkedIn link is not available for this project.");
+                                });
+                            }
+
+                            // Set Case Study link
+                            const $caseStudyLink = $('#case-study');
+                            if (project['case-study']) {
+                                $caseStudyLink.attr('href', project['case-study']);
+                            } else {
+                                $caseStudyLink.attr('href', '#').off('click').on('click', function (e) {
+                                    e.preventDefault();
+                                    alert("Case Study link is not available for this project.");
+                                });
+                            }
+
+                            // Set dependencies
+                            const $dependenciesContainer = $('#dependencies');
+                            if (Array.isArray(project.dependencies) && project.dependencies.length > 0) {
+                                $dependenciesContainer.empty();
+                                project.dependencies.forEach(dep => {
+                                    const $wrapper = $('<div>').addClass('tech-icon-wrapper');
+                                    const $img = $('<img>')
+                                        .attr('src', `static/images/techs/${dep}.png`)
+                                        .on('error', function () {
+                                            $(this).attr('src', 'static/images/techs/null.png');
+                                        })
+                                        .attr('alt', dep)
+                                        .addClass('tech-icon');
+                                    const $tooltip = $('<div>').addClass('tooltip').text(dep);
+                                    $wrapper.append($img).append($tooltip);
+                                    $dependenciesContainer.append($wrapper);
+                                });
+                            } else {
+                                $dependenciesContainer.empty();
+                                const $wrapper = $('<div>').addClass('tech-icon-wrapper');
+                                const $img = $('<img>')
+                                    .attr('src', 'static/images/techs/null.png')
+                                    .attr('alt', 'Null')
+                                    .addClass('tech-icon');
+                                const $tooltip = $('<div>').addClass('tooltip').text('Null');
+                                $wrapper.append($img).append($tooltip);
+                                $dependenciesContainer.append($wrapper);
+                            }
+
+                            // Initialize carousel with project images or default images
+                            const images = Array.isArray(project.images) && project.images.length > 0 ? project.images : defaultImages;
+                            initializeCarousel(images);
+
+                        } else {
+                            showError("Project not found with the provided ID.");
+                        }
+                    })
+                    // .fail(showError("Failed to load project data. Please try again later."));
+                    .fail(error => {
+                        console.error('Error loading project:', error);
+                    });
+            } else {
+                showError("Project Id not provided in URL.");
+            }
+
+
+        });
+
+        // Carousel functions
+        function initializeCarousel(images = defaultImages) {
+            // Handle different image counts
+            if (images.length === 1) {
+                setCarouselImages(images[0], images[0], images[0]);
+            } else if (images.length === 2) {
+                setCarouselImages(images[0], images[1], images[0]);
+            } else {
+                setCarouselImages(images[images.length - 1], images[0], images[1]);
+            }
+
+            // Only animate if we have multiple unique images
+            if (new Set(images).size > 1) {
+                startCarousel(images);
+            }
+        }
+
+        function setCarouselImages(leftSrc, centerSrc, rightSrc) {
+            $leftImg.attr('src', leftSrc);
+            $centerImg.attr('src', centerSrc);
+            $rightImg.attr('src', rightSrc);
+        }
+
+        function startCarousel(images) {
+            let currentIndex = 0;
+            const slideDuration = 4000;
+            const $carousel = $('.project-carousel');
+
+            const rotate = () => {
+                currentIndex = (currentIndex + 1) % images.length;
+                updateCarousel(images, currentIndex);
+            };
+
+            let intervalId = setInterval(rotate, slideDuration);
+        }
+
+        function updateCarousel(images, currentIndex) {
+            if (images.length === 2) {
+                // Alternate between two images
+                setCarouselImages(
+                    images[currentIndex === 0 ? 1 : 0],
+                    images[currentIndex],
+                    images[currentIndex === 0 ? 1 : 0]
+                );
+            } else if (images.length > 2) {
+                // Normal rotation for 3+ images
+                const leftIndex = (currentIndex - 1 + images.length) % images.length;
+                const rightIndex = (currentIndex + 1) % images.length;
+
+                setCarouselImages(
+                    images[leftIndex],
+                    images[currentIndex],
+                    images[rightIndex]
+                );
+            }
+        }
+
+        function showError(msg) {
+            $("#content").empty();
+            $('#content').append(`
+                <div class="error-container-wrapper">
+                    <div class="error-container" id="error-display">
+                        <div class="error-icon">⚠️</div>
+                        <h1 class="error-title"> Error Fetching Project </h1>
+                        <p class="error-message" id="error-details">
+                            ${msg}
+                        </p>
+                        <div class="error-actions">
+                            <a href="index.html" class="btn btn-primary">Return Home</a>
+                            <a href="index.html#projects" class="btn btn-secondary">Browse Projects</a>
+                        </div>
+                    </div>
+                </div>
+            `);
+        }
+
+    </script>
+
+</body>
+
+</html>

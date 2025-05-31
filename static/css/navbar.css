@@ -1,0 +1,135 @@
+:root {
+    --neon-blue: #00d1ff;
+    --electric-pink: #ff2d75;
+
+}
+
+.navbar-section {
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    padding: 2rem 2rem;
+    box-sizing: border-box;
+}
+
+nav {
+    position: relative;
+    width: 60%;
+    height: 50px;
+    margin: 0 auto;
+    background: var(--glass-light);
+    border-radius: var(--border-radius);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+nav::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: var(--border-radius);
+    padding: 2px;
+    background: linear-gradient(170deg, var(--electric-blue), var(--cyan), var(--deep-blue));
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+nav ul li {
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+}
+
+nav ul li a {
+    display: flex;
+    flex-direction: row;
+    gap: 0.3rem;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: var(--light-gray);
+    font-weight: 500;
+    font-size: 0.90rem;
+    width: 100%;
+    height: 100%;
+    transition: all var(--transition-speed) ease;
+}
+
+nav ul li a svg {
+    width: 21px;
+    height: 21px;
+    transition: all var(--transition-speed) ease;
+}
+
+nav ul li:hover a {
+    color: var(--electric-blue);
+}
+
+nav ul li:hover a svg {
+    transform: scale(1.1);
+}
+
+.resume-download {
+    height: 45px;
+    padding: 0.5rem 1rem;
+    background-color: var(--electric-blue);
+    color: var(--white);
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: background-color var(--transition-speed) ease;
+    text-decoration: none;
+}
+
+.resume-download:hover {
+    background-color: var(--highlight-blue);
+}
+
+.resume-download i {
+    font-size: 0.9rem;
+}
+
+.resume-download a {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    text-decoration: none;
+}
+
+.resume-download svg {
+    width: 20px;
+    height: 20px;
+    transition: all var(--transition-speed) ease;
+}
+
+@media (max-width: 768px) {
+    nav ul li span {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {}

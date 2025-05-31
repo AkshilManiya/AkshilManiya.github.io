@@ -1,0 +1,26 @@
+/* Mouse Trail Styles */
+.trail {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: rgb(25, 0, 255, 1);
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    mix-blend-mode: screen;
+    transition: transform 0.1s ease, opacity 0.5s ease;
+    opacity: 0;
+    z-index: 9999;
+}
+
+/* Hide default cursor when trail is active */
+body.trail-active {
+    cursor: none;
+}
+
+
+@media (max-width: 768px) {
+    .trail {
+        display: none;
+    }
+}

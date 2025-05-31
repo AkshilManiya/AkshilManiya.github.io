@@ -1,0 +1,101 @@
+.projects-section {
+    padding: 3rem 0;
+    position: relative;
+    margin: auto;
+    max-width: 90%;
+    overflow: hidden;
+    height: 100vh;
+    box-sizing: border-box;
+}
+
+.projects-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.projects-carousel {
+    width: 100%;
+    overflow: hidden;
+}
+
+.projects-container {
+    display: flex;
+    gap: 2rem;
+    transition: transform 0.5s ease;
+    width: 100%;
+    padding: 1rem;
+}
+
+.nav-arrow {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--light-gray);
+    transition: all var(--transition-speed) ease;
+    padding: 0.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-arrow svg {
+    width: 40px;
+    height: 40px;
+}
+
+.nav-arrow:hover {
+    color: var(--electric-blue);
+}
+
+.track-project {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.track-project .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--light-gray);
+    cursor: pointer;
+    transition: all var(--transition-speed) ease;
+}
+
+.track-project .dot.active {
+    background-color: var(--electric-blue);
+    transform: scale(1.3);
+}
+
+.track-project .dot:hover {
+    background-color: var(--cyan);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .projects-section {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-arrow {
+        padding: 0.5rem;
+    }
+
+    .nav-arrow svg {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .projects-section {
+        height: auto;
+    }
+}

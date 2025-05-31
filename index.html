@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akshil Maniya | Portfolio</title>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            color: var(--light-gray);
+            overflow-x: hidden;
+            background-color: black;
+        }
+
+        :root {
+            /* Base colors */
+            --black: #0a0a0a;
+            --dark-gray: #1a1a1a;
+            --medium-gray: #2a2a2a;
+            --light-gray: #e5e5e5;
+            --white: #ffffff;
+
+            /* Blue accent colors */
+            --electric-blue: #3B82F6;
+            --highlight-blue: #60a5fa;
+            --deep-blue: #1e40af;
+            --cyan: #22d3ee;
+
+            /* Glass morphism colors */
+            --glass-light: rgba(255, 255, 255, 0.05);
+            --glass-dark: rgba(0, 0, 0, 0.3);
+            --glass-border: rgba(255, 255, 255, 0.1);
+
+            /* Utility colors */
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+
+            /* Utility */
+            --transition-speed: 0.3s;
+            --section-padding: 4rem;
+            --blur-amount: 8px;
+            --border-radius: 12px;
+        }
+
+        .section-header {
+            position: relative;
+            text-align: center;
+            margin-bottom: 3rem;
+            z-index: 2;
+        }
+
+        .heading {
+            font-size: 3rem;
+            color: var(--white);
+            text-align: center;
+            position: relative;
+        }
+
+        .heading span {
+            color: var(--electric-blue);
+            position: relative;
+        }
+
+        .heading span::after {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--cyan);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.5s ease;
+        }
+
+        .heading:hover span::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        .section-subtitle {
+            color: var(--light-gray);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+
+    <link rel="stylesheet" href="static/css/body_background.css">
+    <link rel="stylesheet" href="static/css/mouse_trailing.css">
+    <link rel="stylesheet" href="static/css/scroll_to_top.css">
+    <link rel="stylesheet" href="static/css/navbar.css">
+    <link rel="stylesheet" href="static/css/hero.css">
+    <link rel="stylesheet" href="static/css/about_me.css">
+    <link rel="stylesheet" href="static/css/skills.css">
+    <link rel="stylesheet" href="static/css/project.css">
+    <link rel="stylesheet" href="static/css/project_card.css">
+    <link rel="stylesheet" href="static/css/contact_me.css">
+    <link rel="stylesheet" href="static/css/footer.css">
+
+</head>
+
+<body>
+
+    <!-- Fixed Background (Video/Gradient) -->
+    <div class="fixed-bg">
+        <video autoplay muted loop>
+            <source src="static/background/v1.mp4" type="video/mp4">
+        </video>
+    </div>
+    <script src="static/js/mouse_trailing.js"></script>
+
+
+    <!-- Scroll to Top Button -->
+    <button aria-label="Scroll to top" class="scroll-to-top">
+        <svg stroke-linecap="round" stroke-width="2" stroke="currentColor" fill="none" viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg" height="24" width="24">
+            <path d="M12 21V5" stroke-linejoin="round"></path>
+            <path d="M6 11L12 5L18 11"></path>
+        </svg>
+    </button>
+    <script src="static/js/scroll_to_top.js"></script>
+
+
+    <!-- Scrollable Content (Overlay) -->
+    <div class="scrollable-content">
+
+        <!-- Navbar -->
+        <div class="navbar-section">
+            <nav>
+                <ul>
+                    <li>
+                        <a href="#home" aria-label="Home">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M3 10L12 3L21 10V20C21 20.5523 20.5523 21 20 21H16C15.4477 21 15 20.5523 15 20V16C15 15.4477 14.5523 15 14 15H10C9.44772 15 9 15.4477 9 16V20C9 20.5523 8.55228 21 8 21H4C3.44772 21 3 20.5523 3 20V10Z"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#about" aria-label="About">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="2" />
+                                <path d="M4 20C4 16 8 14 12 14C16 14 20 16 20 20" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" />
+                            </svg>
+                            <span>About</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#skills" aria-label="Skills">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8 8L4 12L8 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M16 8L20 12L16 16" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M14 4L10 20" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                            <span>Skills</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#projects" aria-label="Projects">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M3 6H9L11 8H21C21.5523 8 22 8.44772 22 9V19C22 19.5523 21.5523 20 21 20H3C2.44772 20 2 19.5523 2 19V7C2 6.44772 2.44772 6 3 6Z"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <circle cx="8" cy="14" r="1.5" fill="currentColor" />
+                                <circle cx="12" cy="14" r="1.5" fill="currentColor" />
+                                <circle cx="16" cy="14" r="1.5" fill="currentColor" />
+                            </svg>
+                            <span>Projects</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#contact" aria-label="Contact">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M4 4H20C21.1046 4 22 4.89543 22 6V18C22 19.1046 21.1046 20 20 20H4C2.89543 20 2 19.1046 2 18V6C2 4.89543 2.89543 4 4 4Z"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M22 6L12 13L2 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                            <span>Contact</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <button class="resume-download">
+                <a href="E:\akshil\programing\web_front\Portfolio\r1.pdf" download="Akshil_Resume.pdf" target="_blank"
+                    style="color: inherit; text-decoration: none;">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 3V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        <path d="M6 11L12 17L18 11" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path d="M5 21H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                    <span> Resume </span>
+                </a>
+            </button>
+        </div>
+
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <div class="illu-container">
+                    <!-- Glow effects -->
+                    <!-- <div class="glow"></div> -->
+                    <!-- <div class="glow glow-2"></div> -->
+                    <!-- Python Logo -->
+                    <img src="static/images/python_illustration.png" alt="Python Logo" class="python-logo" id="logo">
+                </div>
+                <div class="detail-container">
+                    <h1>Hi, I'm <span>Akshil</span></h1>
+                    <div class="animated-text">
+                        <h2 class="typing-text">Python Developer</h2>
+                    </div>
+                    <p>I specialize in Django and Flask, creating efficient and scalable web applications with clean,
+                        maintainable code.</p>
+                    <div class="button-group">
+                        <a href="#projects" class="btn btn-primary">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M14 4H19C19.5523 4 20 4.44772 20 5V10" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M10 14L20 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path
+                                    d="M15 14V17C15 18.6569 13.6569 20 12 20H6C4.34315 20 3 18.6569 3 17V11C3 9.34315 4.34315 8 6 8H9"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                            View Projects
+                        </a>
+                        <a href="#contact" class="btn btn-secondary">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                            Contact Me
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script src="static/js/hero.js"></script> 
+
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <div class="section-header">
+                <h1 class="heading">About <span>Me</span></h1>
+                <div class="section-subtitle">
+                    <p>Get to know me better</p>
+                </div>
+            </div>
+            <div class="about-content">
+                <div class="shocial-links">
+                    <div class="shocial-link">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M4.98 3.5C4.98 4.6 4.1 5.5 3 5.5C1.9 5.5 1 4.6 1 3.5C1 2.4 1.9 1.5 3 1.5C4.1 1.5 4.98 2.4 4.98 3.5ZM1.5 8.5H4.5V22H1.5V8.5ZM8.5 8.5H11.3V10H11.4C11.9 9.1 13 8 14.7 8C18 8 18.5 10.2 18.5 13.4V22H15.5V14.2C15.5 12.4 15.5 10.2 13.4 10.2C11.3 10.2 11 12.1 11 14.1V22H8V8.5H8.5Z"
+                                fill="currentColor" />
+                        </svg>
+                    </div>
+                    <div class="shocial-link">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M12 1.5C6.2 1.5 1.5 6.2 1.5 12C1.5 16.8 4.6 20.9 8.9 22.3C9.4 22.4 9.6 22.1 9.6 21.9C9.6 21.7 9.6 21.1 9.6 20.4C6.8 20.9 6.2 19 6.2 19C5.7 17.8 5 17.5 5 17.5C4 16.9 5.1 16.9 5.1 16.9C6.2 17 6.8 18 6.8 18C7.8 19.7 9.5 19.2 10.2 18.9C10.3 18.2 10.6 17.7 11 17.4C8.5 17.1 6 16.1 6 11.7C6 10.5 6.4 9.6 7.1 8.9C7 8.6 6.6 7.4 7.2 5.7C7.2 5.7 8.1 5.4 9.6 6.4C10.4 6.2 11.3 6.1 12.2 6.1C13.1 6.1 14 6.2 14.8 6.4C16.3 5.4 17.2 5.7 17.2 5.7C17.8 7.4 17.4 8.6 17.3 8.9C18 9.6 18.4 10.5 18.4 11.7C18.4 16.1 15.9 17.1 13.4 17.4C13.9 17.8 14.4 18.6 14.4 20C14.4 21.7 14.4 22.9 14.4 22.9C14.4 23.1 14.6 23.4 15.1 23.3C19.4 21.9 22.5 17.8 22.5 12C22.5 6.2 17.8 1.5 12 1.5Z"
+                                fill="currentColor" />
+                        </svg>
+                    </div>
+                    <div class="shocial-link">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M22 6L12 13L2 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                </div>
+                <img src="static/images/Profile.png" alt="Profile Picture" class="profile-pic">
+                <div class="about-text">
+                    <p>
+                        I am a passionate <span style="color: var(--electric-blue); font-weight: bold;">Python
+                            developer</span> with a focus on web development using
+                        <span style="color: var(--cyan); font-weight: bold;">Django</span> and <span
+                            style="color: var(--cyan); font-weight: bold;">Flask</span>.
+                        My journey in programming started with a fascination for <span
+                            style="color: var(--highlight-blue); font-weight: bold;">problem-solving</span> and has
+                        evolved
+                        into a love for building <span style="color: var(--highlight-blue); font-weight: bold;">scalable
+                            web applications</span>. I enjoy working on projects that
+                        challenge my skills and allow me to learn <span
+                            style="color: var(--electric-blue); font-weight: bold;">new technologies</span>.
+                    </p>
+                    <p>
+                        In my free time, I contribute to <span
+                            style="color: var(--cyan); font-weight: bold;">open-source projects</span> and explore new
+                        <span style="color: var(--cyan); font-weight: bold;">frameworks</span> and
+                        <span style="color: var(--cyan); font-weight: bold;">libraries</span> to enhance my skill set. I
+                        believe in <span style="color: var(--highlight-blue); font-weight: bold;">continuous
+                            learning</span> and strive to stay
+                        updated with the <span style="color: var(--highlight-blue); font-weight: bold;">latest
+                            trends</span> in the tech industry.
+                    </p>
+                    <p>
+                        If you're looking for a <span style="color: var(--electric-blue); font-weight: bold;">dedicated
+                            developer</span> to bring your ideas to life, feel free to <span
+                            style="color: var(--cyan); font-weight: bold;">reach out!</span>
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="education-content">
+                <h3>Education</h3>
+                <ul>
+                    <li>
+                        <strong>Bachelor of Science in Information Technology</strong><br>
+                        UKA Tarsadia University, 2021 - 2024<br>
+                        <span>GPA: 6.85/10</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="my-experties">
+                <h3>My Expertise</h3>
+                <ul>
+                    <li>Web Development with Django and Flask</li>
+                    <li>RESTful API Design and Development</li>
+                    <li>Database Management with MySQL</li>
+                    <li>Version Control with Git</li>
+                    <li>Responsive Web Design</li>
+                    <li>Problem Solving and Debugging</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Skill Section -->
+        <section id="skills" class="skills-section">
+            <div class="section-header">
+                <h1 class="heading">My <span>Skills</span></h1>
+                <div class="section-subtitle">
+                    <p>Technologies I work with</p>
+                </div>
+            </div>
+
+            <div class="skills-grid">
+                <div class="skill-category" data-category="frontend">
+                    <div class="category-header">
+                        <h3>Frontend</h3>
+                        <div class="tech-icon">💻</div>
+                    </div>
+                    <div class="skills-container">
+                        <div class="skill-item">
+                            <div class="skill-icon">
+                                <img src="static/images/techs/html.png" alt="HTML5">
+                            </div>
+                            <!-- <div class="skill-progress">
+                                <div class="progress-bar" style="--progress: 90%"></div>
+                            </div> -->
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon">
+                                <img src="static/images/techs/css.png" alt="CSS3">
+                            </div>
+                            <!-- <div class="skill-progress">
+                                <div class="progress-bar" style="--progress: 85%"></div>
+                            </div> -->
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon">
+                                <img src="static/images/techs/JavaScript.png" alt="JavaScript">
+                            </div>
+                            <!-- <div class="skill-progress">
+                                <div class="progress-bar" style="--progress: 70%"></div>
+                            </div> -->
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon">
+                                <img src="static/images/techs/jQuery.png" alt="jQuery">
+                            </div>
+                            <!-- <div class="skill-progress">
+                                <div class="progress-bar" style="--progress: 70%"></div>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category" data-category="backend">
+                    <div class="category-header">
+                        <h3>Backend</h3>
+                        <div class="tech-icon">⚙️</div>
+                    </div>
+                    <div class="skills-container">
+                        <div class="skill-item">
+                            <div class="skill-icon">
+                                <img src="static/images/techs/Django.png" alt="Django">
+                            </div>
+                            <!-- <div class="skill-progress">
+                                <div class="progress-bar" style="--progress: 75%"></div>
+                            </div> -->
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon">
+                                <img src="static/images/techs/Flask.png" alt="Flask">
+                            </div>
+                            <!-- <div class="skill-progress">
+                                <div class="progress-bar" style="--progress: 80%"></div>
+                            </div> -->
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon">
+                                <img src="static/images/techs/PHP.png" alt="PHP">
+                            </div>
+                            <!-- <div class="skill-progress">
+                                <div class="progress-bar" style="--progress: 85%"></div>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category" data-category="languages">
+                    <div class="category-header">
+                        <h3>Languages</h3>
+                        <div class="tech-icon">⌨️</div>
+                    </div>
+                    <div class="skills-container">
+                        <div class="skill-item">
+                            <div class="skill-icon">
+                                <img src="static/images/techs/Python.png" alt="Python">
+                            </div>
+                            <!-- <div class="skill-progress">
+                                <div class="progress-bar" style="--progress: 95%"></div>
+                            </div> -->
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon">
+                                <img src="static/images/techs/Java.png" alt="Java">
+                            </div>
+                            <!-- <div class="skill-progress">
+                                <div class="progress-bar" style="--progress: 65%"></div>
+                            </div> -->
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon">
+                                <img src="static/images/techs/C++.png" alt="C++">
+                            </div>
+                            <!-- <div class="skill-progress">
+                                <div class="progress-bar" style="--progress: 80%"></div>
+                            </div> -->
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="skill-category" data-category="database">
+                    <div class="category-header">
+                        <h3>Database</h3>
+                        <div class="tech-icon">🗃️</div>
+                    </div>
+                    <div class="skills-container">
+                        <div class="skill-item">
+                            <div class="skill-icon">
+                                <img src="static/images/techs/MySQL.png" alt="MySQL">
+                            </div>
+                            <!-- <div class="skill-progress">
+                                <div class="progress-bar" style="--progress: 90%"></div>
+                            </div> -->
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon">
+                                <img src="static/images/techs/PostgresSQL.png" alt="PostgreSQL">
+                            </div>
+                            <!-- <div class="skill-progress">
+                                <div class="progress-bar" style="--progress: 60%"></div>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category" data-category="tools">
+                    <div class="category-header">
+                        <h3>Tools</h3>
+                        <div class="tech-icon">🛠️</div>
+                    </div>
+                    <div class="skills-container">
+                        <div class="skill-item">
+                            <div class="skill-icon">
+                                <img src="static/images/techs/Git.png" alt="Git">
+                            </div>
+                            <!-- <div class="skill-progress">
+                                <div class="progress-bar" style="--progress: 85%"></div>
+                            </div> -->
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon">
+                                <img src="static/images/techs/Visual Studio.png" alt="Visual Studio">
+                            </div>
+                            <!-- <div class="skill-progress">
+                                <div class="progress-bar" style="--progress: 90%"></div>
+                            </div> -->
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon">
+                                <img src="static/images/techs/VS Code.png" alt="VS Code">
+                            </div>
+                            <!-- <div class="skill-progress">
+                                <div class="progress-bar" style="--progress: 90%"></div>
+                            </div> -->
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon">
+                                <img src="static/images/techs/PyCharm.png" alt="PyCharm">
+                            </div>
+                            <!-- <div class="skill-progress">
+                                <div class="progress-bar" style="--progress: 50%"></div>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- project Section  -->
+        <section id="projects" class="projects-section">
+            <div class="section-header">
+                <h1 class="heading">My <span>Projects</span></h1>
+                <div class="tech-aura"></div>
+                <div class="section-subtitle">Innovative solutions with cutting-edge technology</div>
+            </div>
+
+            <div class="projects-navigation">
+                <button class="nav-arrow left-arrow prev" aria-label="Previous projects">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M42 4L20 24L42 44L36 38L22 24L36 10L42 4Z" fill="currentColor" />
+                    </svg>
+                </button>
+
+
+                <div class="projects-carousel">
+                    <div class="projects-container">
+                        <div class="project-card" onclick="window.location.href='Project.html?E:\akshil\programing\web_front\Portfolio\index.html=11'">
+                            <img src="project/MPD/p11.png" alt="MPD">
+                            <div class="project-info">
+                                <h2>MPD</h2>
+                                <div>Web application</div>
+                                <div class="technology-used">
+                                    <img src="images/techs/html.png" alt="HTML">
+                                    <img src="images/techs/css.png" alt="CSS">
+                                </div>
+                                <span class="explore-projects-more"><svg width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" />
+                                        <path d="M12 6L13.5 10.5L18 12L13.5 13.5L12 18L10.5 13.5L6 12L10.5 10.5L12 6Z"
+                                            fill="currentColor" />
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="project-card">
+                            <img src="project/project1/p12.png" alt="MPD">
+                            <div class="project-info">
+                                <h2>MPD</h2>
+                                <div>Web application</div>
+                                <div class="technology-used">
+                                    <img src="images/techs/html.png" alt="HTML">
+                                    <img src="images/techs/css.png" alt="CSS">
+                                </div>
+                                <span class="explore-projects-more"><svg width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" />
+                                        <path d="M12 6L13.5 10.5L18 12L13.5 13.5L12 18L10.5 13.5L6 12L10.5 10.5L12 6Z"
+                                            fill="currentColor" />
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="project-card">
+                            <img src="project/project1/p13.png" alt="MPD">
+                            <div class="project-info">
+                                <h2>MPD</h2>
+                                <div>Web application</div>
+                                <div class="technology-used">
+                                    <img src="images/techs/html.png" alt="HTML">
+                                    <img src="images/techs/css.png" alt="CSS">
+                                </div>
+                                <span class="explore-projects-more"><svg width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" />
+                                        <path d="M12 6L13.5 10.5L18 12L13.5 13.5L12 18L10.5 13.5L6 12L10.5 10.5L12 6Z"
+                                            fill="currentColor" />
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="project-card">
+                            <img src="project/project1/p12.png" alt="MPD">
+                            <div class="project-info">
+                                <h2>MPD</h2>
+                                <div>Web application</div>
+                                <div class="technology-used">
+                                    <img src="images/techs/html.png" alt="HTML">
+                                    <img src="images/techs/css.png" alt="CSS">
+                                </div>
+                                <span class="explore-projects-more"><svg width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" />
+                                        <path d="M12 6L13.5 10.5L18 12L13.5 13.5L12 18L10.5 13.5L6 12L10.5 10.5L12 6Z"
+                                            fill="currentColor" />
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="project-card">
+                            <img src="project/project1/p12.png" alt="MPD">
+                            <div class="project-info">
+                                <h2>MPD</h2>
+                                <div>Web application</div>
+                                <div class="technology-used">
+                                    <img src="images/techs/html.png" alt="HTML">
+                                    <img src="images/techs/css.png" alt="CSS">
+                                </div>
+                                <span class="explore-projects-more"><svg width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" />
+                                        <path d="M12 6L13.5 10.5L18 12L13.5 13.5L12 18L10.5 13.5L6 12L10.5 10.5L12 6Z"
+                                            fill="currentColor" />
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="nav-arrow right-arrow next" aria-label="Next projects">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6 4L28 24L6 44L12 38L26 24L12 10L6 4Z" fill="currentColor" />
+                    </svg>
+                </button>
+            </div>
+
+            <div class="track-project">
+                <span class="dot active" data-index="0"></span>
+                <span class="dot" data-index="1"></span>
+                <span class="dot" data-index="2"></span>
+                <span class="dot" data-index="3"></span>
+                <span class="dot" data-index="4"></span>
+            </div>
+        </section>
+        <script src="static/js/project.js"></script>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <div class="section-header">
+                <h1 class="heading">Contact <span>Me</span></h1>
+                <div class="section-subtitle">
+                    <p>Feel free to reach out for collaborations, inquiries, or just to say hello!</p>
+                </div>
+            </div>
+
+            <div class="contact-wrapper">
+                <!-- Contact Information Column -->
+                <div class="contact-info">
+                    <h3 class="info-title">Get in Touch</h3>
+
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                </path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </div>
+                        <div class="info-content">
+                            <h4>Email</h4>
+                            <a href="mailto:akshilmaniya292@gmail.com">akshilmaniya292@gmail.com</a>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path
+                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div class="info-content">
+                            <h4>Phone</h4>
+                            <a href="tel:+911234567890">+91 1234567890</a>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="3"></circle>
+                                <path
+                                    d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div class="info-content">
+                            <h4>Social Links</h4>
+                            <div class="social-links-frame">
+                                <a href="#" aria-label="LinkedIn" class="link">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M4.98 3.5C4.98 4.6 4.1 5.5 3 5.5C1.9 5.5 1 4.6 1 3.5C1 2.4 1.9 1.5 3 1.5C4.1 1.5 4.98 2.4 4.98 3.5ZM1.5 8.5H4.5V22H1.5V8.5ZM8.5 8.5H11.3V10H11.4C11.9 9.1 13 8 14.7 8C18 8 18.5 10.2 18.5 13.4V22H15.5V14.2C15.5 12.4 15.5 10.2 13.4 10.2C11.3 10.2 11 12.1 11 14.1V22H8V8.5H8.5Z"
+                                            fill="currentColor" />
+                                    </svg>
+                                </a>
+                                <a href="#" aria-label="GitHub" class="link">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M12 1.5C6.2 1.5 1.5 6.2 1.5 12C1.5 16.8 4.6 20.9 8.9 22.3C9.4 22.4 9.6 22.1 9.6 21.9C9.6 21.7 9.6 21.1 9.6 20.4C6.8 20.9 6.2 19 6.2 19C5.7 17.8 5 17.5 5 17.5C4 16.9 5.1 16.9 5.1 16.9C6.2 17 6.8 18 6.8 18C7.8 19.7 9.5 19.2 10.2 18.9C10.3 18.2 10.6 17.7 11 17.4C8.5 17.1 6 16.1 6 11.7C6 10.5 6.4 9.6 7.1 8.9C7 8.6 6.6 7.4 7.2 5.7C7.2 5.7 8.1 5.4 9.6 6.4C10.4 6.2 11.3 6.1 12.2 6.1C13.1 6.1 14 6.2 14.8 6.4C16.3 5.4 17.2 5.7 17.2 5.7C17.8 7.4 17.4 8.6 17.3 8.9C18 9.6 18.4 10.5 18.4 11.7C18.4 16.1 15.9 17.1 13.4 17.4C13.9 17.8 14.4 18.6 14.4 20C14.4 21.7 14.4 22.9 14.4 22.9C14.4 23.1 14.6 23.4 15.1 23.3C19.4 21.9 22.5 17.8 22.5 12C22.5 6.2 17.8 1.5 12 1.5Z"
+                                            fill="currentColor" />
+                                    </svg>
+                                </a>
+                                <a href="#" aria-label="Email" class="link">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z"
+                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path d="M22 6L12 13L2 6" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form Column -->
+                <form class="contact-form" action="#" method="POST">
+                    <h3 class="form-title">Have Something To Talk About?</h3>
+
+                    <div class="form-group">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your Name" required class="form-input">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Your Email" required
+                            class="form-input">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message" class="form-label">Message</label>
+                        <textarea id="message" name="message" placeholder="Your Message" rows="5" required
+                            class="form-textarea"></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Footer Section -->
+        <footer class="site-footer">
+            <div class="footer-bottom">
+                <p class="copyright">&copy; <span id="year">2025</span> Akshil Maniya. All rights reserved.</p>
+                <p class="credits">Designed & Built with ❤️ by Akshil</p>
+            </div>
+        </footer>
+
+    </div>
+</body>
+
+</html>

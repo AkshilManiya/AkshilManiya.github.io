@@ -1,0 +1,46 @@
+{
+    "projects": [
+        {
+            "project_id": "11",
+            "title": "Project Alpha",
+            "subtitle": "A Beginner's Journey",
+            "description": "",
+            "dependencies": [
+                "HTML",
+                "CSS",
+                "JavaScript"
+            ],
+            "progress": 40,
+            "live": true,
+            "url": "",
+            "github_code": "",
+            "linkedin": "",
+            "case-study": "",
+            "images": [
+                "project/MPD/p11.png",
+                "project/MPD/p12.png",
+                "project/MPD/p13.png",
+                "project/MPD/p14.png",
+                "project/MPD/p15.png",
+                "project/MPD/p16.png",
+                "project/MPD/p17.png"
+            ]
+        },
+        {
+            "project_id": "12",
+            "title": "Project Beta",
+            "subtitle": "Advanced Techniques",
+            "description": "This project explores advanced techniques in web development.",
+            "dependencies": [
+                "html"
+            ],
+            "progress": 50,
+            "live": false,
+            "url": "",
+            "github_code": "",
+            "linkedin": "",
+            "case-study": "",
+            "images": []
+        }
+    ]
+}
