@@ -5,8 +5,8 @@
             "title": "Portfolio",
             "description": "",
             "dependencies": [
-                "HTML",
-                "CSS",
+                "html",
+                "css",
                 "JavaScript",
                 "jQuery"
             ],
@@ -29,11 +29,11 @@
             "title": "MoviePerDay",
             "description": "",
             "dependencies": [
-                "HTML",
-                "CSS",
+                "html",
+                "css",
                 "JavaScript",
                 "Django",
-                "MySql"
+                "MySQL"
             ],
             "progress": 30,
             "live": false,
@@ -56,8 +56,8 @@
             "title": "Bingo",
             "description": "",
             "dependencies": [
-                "HTML",
-                "CSS",
+                "html",
+                "css",
                 "jQuery",
                 "SocketIo",
                 "Flask"
@@ -82,11 +82,11 @@
             "title": "GameZone",
             "description": "",
             "dependencies": [
-                "HTML",
-                "CSS",
+                "html",
+                "css",
                 "JavaScript",
                 "php",
-                "MySql"
+                "MySQL"
             ],
             "progress": 90,
             "live": false,
@@ -109,11 +109,11 @@
             "title": "SweetShop",
             "description": "",
             "dependencies": [
-                "HTML",
-                "CSS",
+                "html",
+                "css",
                 "JavaScript",
                 "php",
-                "MySql"
+                "MySQL"
             ],
             "progress": 90,
             "live": false,
@@ -141,11 +141,11 @@
             "title": "ExpensesSplitter",
             "description": "",
             "dependencies": [
-                "HTML",
-                "CSS",
+                "html",
+                "css",
                 "JavaScript",
                 "Flask",
-                "MySql"
+                "MySQL"
             ],
             "progress": 60,
             "live": false,
@@ -169,11 +169,11 @@
             "title": "MoviePerDayV1",
             "description": "",
             "dependencies": [
-                "HTML",
-                "CSS",
+                "html",
+                "css",
                 "JavaScript",
                 "Django",
-                "MySql"
+                "MySQL"
             ],
             "progress": 80,
             "live": true,
@@ -193,12 +193,12 @@
             "title": "DataScraper",
             "description": "",
             "dependencies": [
-                "HTML",
-                "CSS",
+                "html",
+                "css",
                 "JavaScript",
                 "Flask",
                 "BeautifulSoup",
-                "MySql"
+                "MySQL"
             ],
             "progress": 100,
             "live": false,
@@ -220,8 +220,8 @@
             "title": "TheSocialSkull",
             "description": "",
             "dependencies": [
-                "HTML",
-                "CSS",
+                "html",
+                "css",
                 "jQuery"
             ],
             "progress": 100,
@@ -249,7 +249,7 @@
                 "css",
                 "JavaScript",
                 "Flask",
-                "MySql"
+                "MySQL"
             ],
             "progress": 95,
             "live": false,
