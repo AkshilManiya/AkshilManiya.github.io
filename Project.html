@@ -106,6 +106,16 @@
             position: relative;
             overflow: hidden;
         }
+
+        @media (max-width: 768px) {
+            #desktop_screen {
+                display: none;
+            }
+
+            #mobile_screen {
+                display: block;
+            }
+        }
     </style>
 
     <link rel="stylesheet" href="static/css/body_background.css">
@@ -119,11 +129,16 @@
 
 <body>
 
+    <!-- Fixed Background (Video/Gradient) -->
     <div class="fixed-bg">
-        <video autoplay muted loop>
+        <video autoplay muted loop id="desktop_screen">
             <source src="static/background/v1.mp4" type="video/mp4">
         </video>
+        <video autoplay muted loop id="mobile_screen">
+            <source src="static/background/v2.mp4" type="video/mp4">
+        </video>
     </div>
+
     <script src="static/js/mouse_trailing.js"></script>
 
     <div class="scrollable-content" id="content">
@@ -242,12 +257,7 @@
 
             <!-- Project Description -->
             <div class="project-description" id="description">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus ex velit excepturi sint qui
-                    maxime ratione autem, ut quas illo molestiae electi pellentesque quas querat make molestiae
-                    voluptatem quis similique natus! Ducimus possismus corporis sequi sunt repellat hic, habuit enim
-                    quam vel quibus laborum omnis quod a desertu aliquam natus cupiditate! Illo animiam aperiam hic
-                    justo id, modi facilis sequi dulenti rem consequatur quam ellum qui quisque nam nulla quasi eum us
-                    ea him laudantium.</p>
+                <p>No Description available</p>
             </div>
 
             <!-- Project Status -->

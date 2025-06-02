@@ -245,8 +245,8 @@
             "title": "MovieRecommender",
             "description": "",
             "dependencies": [
-                "HTML",
-                "CSS",
+                "html",
+                "css",
                 "JavaScript",
                 "Flask",
                 "MySql"

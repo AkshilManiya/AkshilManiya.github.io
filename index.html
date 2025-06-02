@@ -106,17 +106,30 @@
     <link rel="stylesheet" href="static/css/footer.css">
 
 
-
+    <style>
+        @media (max-width: 768px) {
+            #desktop_screen {
+                display: none;
+            }
+            #mobile_screen {
+                display: block;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
     <!-- Fixed Background (Video/Gradient) -->
     <div class="fixed-bg">
-        <video autoplay muted loop>
+        <video autoplay muted loop id="desktop_screen">
             <source src="static/background/v1.mp4" type="video/mp4">
         </video>
+        <video autoplay muted loop id="mobile_screen">
+            <source src="static/background/v2.mp4" type="video/mp4">
+        </video>
     </div>
+
     <script src="static/js/mouse_trailing.js"></script>
 
     <!-- Scroll to Top Button -->
