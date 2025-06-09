@@ -358,12 +358,8 @@
                                 project.description = "No description available for this project.";
                             }
                             else {
-                                const descriptionParts = project.description.split('||');
-                                $('#description').empty();
-                                descriptionParts.forEach(part => {
-                                    const $p = $('<p>').text(part.trim());
-                                    $('#description').append($p);
-                                });
+                                const descriptionParts = project.description;
+                                $('#description').empty().html(descriptionParts);
                             }
 
                             // Set project progress
