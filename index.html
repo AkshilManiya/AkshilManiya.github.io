@@ -111,8 +111,16 @@
             #desktop_screen {
                 display: none;
             }
+            
             #mobile_screen {
                 display: block;
+                object-fit: cover;
+                height: 100%;
+                width: 100%;
+            }
+
+            .particle {
+                display: none;
             }
         }
     </style>
@@ -125,9 +133,7 @@
         <video autoplay muted loop id="desktop_screen">
             <source src="static/background/v1.mp4" type="video/mp4">
         </video>
-        <video autoplay muted loop id="mobile_screen">
-            <source src="static/background/v2.mp4" type="video/mp4">
-        </video>
+        <img src="static/background/background.png" id="mobile_screen">
     </div>
 
     <script src="static/js/mouse_trailing.js"></script>
@@ -235,10 +241,6 @@
         <section id="home" class="hero">
             <div class="hero-content">
                 <div class="illu-container">
-                    <!-- Glow effects -->
-                    <!-- <div class="glow"></div> -->
-                    <!-- <div class="glow glow-2"></div> -->
-                    <!-- Python Logo -->
                     <img src="static/images/python_illustration.png" alt="Python Logo" class="python-logo" id="logo">
                 </div>
                 <div class="detail-container">
@@ -896,7 +898,7 @@
                         </div>
                         <div class="info-content">
                             <h4>Phone</h4>
-                            <a href="tel:+911234567890">+91 7046771080</a>
+                            <a href="tel:+917046771080">+91 7046771080</a>
                         </div>
                     </div>
 
@@ -914,7 +916,7 @@
                         <div class="info-content">
                             <h4>Social Links</h4>
                             <div class="social-links-frame">
-                                <a href="www.linkedin.com/in/akshil-maniya-61a6b924a" aria-label="LinkedIn"
+                                <a href="https://linkedin.com/in/akshil-maniya-61a6b924a" aria-label="LinkedIn"
                                     class="link">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">

@@ -114,6 +114,13 @@
 
             #mobile_screen {
                 display: block;
+                object-fit: cover;
+                height: 100%;
+                width: 100%;
+            }
+
+            .particle {
+                display: none;
             }
         }
     </style>
@@ -134,9 +141,7 @@
         <video autoplay muted loop id="desktop_screen">
             <source src="static/background/v1.mp4" type="video/mp4">
         </video>
-        <video autoplay muted loop id="mobile_screen">
-            <source src="static/background/v2.mp4" type="video/mp4">
-        </video>
+        <img src="static/background/background.png" id="mobile_screen">
     </div>
 
     <script src="static/js/mouse_trailing.js"></script>
@@ -358,12 +363,8 @@
                                 project.description = "No description available for this project.";
                             }
                             else {
-                                const descriptionParts = project.description.split('||');
-                                $('#description').empty();
-                                descriptionParts.forEach(part => {
-                                    const $p = $('<p>').text(part.trim());
-                                    $('#description').append($p);
-                                });
+                                const descriptionParts = project.description;
+                                $('#description').empty().html(descriptionParts);
                             }
 
                             // Set project progress

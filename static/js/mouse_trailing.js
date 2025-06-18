@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let previousPosition = { x: 0, y: 0 };
 
     // Create initial trail elements
-    for (let i = 0; i < 15; i++) {
+    for (let i = 0; i < 5; i++) {
         const trail = document.createElement('div');
         trail.className = 'trail';
         body.appendChild(trail);

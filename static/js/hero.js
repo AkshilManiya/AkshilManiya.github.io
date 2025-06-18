@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const logo = document.getElementById('logo');
 
     // Create 50 floating particles
-    for (let i = 0; i < 30; i++) {
+    for (let i = 0; i < 10; i++) {
         const particle = document.createElement('div');
         particle.classList.add('particle');
 
